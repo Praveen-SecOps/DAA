@@ -1,0 +1,18 @@
+->The time complexity of Merger sort is O(n*log n).
+  Merge sort algorithm follows divide and conquer rule to sort the given set of 
+  numbers/elements recursively, so it takes less time.
+->Whenever we divide a number onto half in every step during divide and conquer, 
+  we can represent it by logarithmic function i.e log n and the number of steps can 
+  be represebted as log n + 1.
+->We will do a single step operation to find out the middle of any subarray, i.e O(1).
+->Now, a running time of O(n) will be needed to merge the subarrays that is formed by 
+  dividing the original array of n elements,
+->Hence the time complexity will be ---O(n*log n)--- when the total time for mergesort
+  function will become ---n(log n + 1)---.
+
+1) Big-O : O(n*log n)
+2) Big-omega : O(n*log n)
+3) Big-theta : O(n*log n)
+4) Space complexity : O(n)
+
+->The time complexity is same for all cases that is worst, best and average cases as merge sort always divides the array into 2 halves and takes linear time to merge the two halves.

@@ -1,0 +1,10 @@
+step1 : clone the repository 
+step2 : cd to the folder 
+step3 : create branch using : git chekcout -b cse3004-your_r0ll_number
+step4 : write your programs/exectue/take_snapshot
+step5: commit the changes
+step6: push to get remote using : git push origin cse3004-your_roll_number
+step6.1 it will ask for credentials either provied username and password or your token.
+step8: then you can successfully push code to cse3004 folder.
+Note: in your local direcoty you can organise the progrmas in to directory style. after you create branch using chekcout command, you can create folder like lab1.
+in the lab1 you can write and execute and save the output file. then simply push. Then i can see your programs in folder format.
