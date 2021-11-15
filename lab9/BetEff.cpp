@@ -36,3 +36,4 @@ int main() {
 cntLeft;
  }
  for (int i = 0; i < p; ++i) cout << result[i] << " ";
+}
