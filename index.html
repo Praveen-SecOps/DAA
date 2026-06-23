@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Read-Aloud</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" defer></script>
+  <script src="https://unpkg.com/mammoth@1.8.0/mammoth.browser.min.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero" aria-labelledby="app-title">
+      <div>
+        <p class="eyebrow">Accessible study helper</p>
+        <h1 id="app-title">Student Read-Aloud</h1>
+        <p class="lede">Upload a document, extract its text, and listen with word-by-word highlighting.</p>
+      </div>
+      <button id="copy-text" class="ghost-button" type="button" disabled>Copy text</button>
+    </section>
+
+    <section class="upload-card" aria-labelledby="upload-title">
+      <h2 id="upload-title">Upload files</h2>
+      <label id="drop-zone" class="drop-zone" for="file-input" tabindex="0">
+        <input id="file-input" type="file" accept=".pdf,.docx,.txt,.md,.markdown,application/pdf,text/plain,text/markdown,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+        <span class="upload-icon" aria-hidden="true">📄</span>
+        <strong>Drag & drop a PDF, Word, TXT, or Markdown file</strong>
+        <span>or browse from your computer</span>
+      </label>
+      <p id="file-status" class="status" role="status">No file selected.</p>
+    </section>
+
+    <section class="controls-card" aria-labelledby="controls-title">
+      <h2 id="controls-title">Playback controls</h2>
+      <div class="controls">
+        <button id="play-pause" type="button" disabled>Play</button>
+        <button id="stop" type="button" disabled>Stop</button>
+        <label class="speed-control" for="speed">
+          Speed
+          <input id="speed" type="range" min="0.5" max="2" step="0.1" value="1" />
+          <output id="speed-value" for="speed">1.0×</output>
+        </label>
+      </div>
+      <p class="hint">Click any word in the extracted text to jump there and start reading.</p>
+    </section>
+
+    <section class="quiz-card" aria-labelledby="quiz-title">
+      <div class="quiz-header">
+        <div>
+          <h2 id="quiz-title">Practice quiz</h2>
+          <p class="hint">Generate a quick multiple-choice quiz from the extracted text.</p>
+        </div>
+        <button id="generate-quiz" type="button" disabled>Make quiz</button>
+      </div>
+      <div id="quiz-viewer" class="quiz-viewer" aria-live="polite">
+        <p class="placeholder">Upload a document to make a quiz.</p>
+      </div>
+    </section>
+
+    <section class="reader-card" aria-labelledby="reader-title">
+      <div class="reader-header">
+        <h2 id="reader-title">Extracted text</h2>
+        <span id="word-count">0 words</span>
+      </div>
+      <article id="text-viewer" class="text-viewer" aria-live="polite">
+        <p class="placeholder">Your document text will appear here.</p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
