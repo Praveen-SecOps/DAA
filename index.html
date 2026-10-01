@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Student Read-Aloud</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Student accessibility tool</p>
+        <h1>Read aloud from your class files</h1>
+        <p class="subtitle">Upload a PDF, Word document, text file, or Markdown notes. The app extracts readable text, speaks it aloud, and highlights each word as it goes.</p>
+      </section>
+
+      <section class="panel uploader" aria-labelledby="upload-title">
+        <div>
+          <h2 id="upload-title">Upload a file</h2>
+          <p>Drag and drop a supported document here, or choose one from your device.</p>
+        </div>
+        <label id="drop-zone" class="drop-zone" for="file-input" tabindex="0">
+          <input id="file-input" type="file" accept=".pdf,.docx,.txt,.md,text/plain,text/markdown,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+          <span class="drop-icon">📚</span>
+          <strong>Drop your file here</strong>
+          <small>PDF, DOCX, TXT, or Markdown</small>
+        </label>
+        <p id="file-status" class="status" role="status">No file loaded yet.</p>
+      </section>
+
+      <section class="panel controls" aria-label="Playback controls">
+        <div class="button-row">
+          <button id="play-btn" type="button">▶ Play</button>
+          <button id="pause-btn" type="button">⏸ Pause</button>
+          <button id="stop-btn" type="button">⏹ Stop</button>
+          <button id="copy-btn" type="button">Copy text</button>
+        </div>
+        <label class="speed-control" for="speed-range">
+          <span>Reading speed: <strong id="speed-value">1.0×</strong></span>
+          <input id="speed-range" type="range" min="0.5" max="2" step="0.1" value="1" />
+        </label>
+      </section>
+
+      <section class="panel reader" aria-labelledby="reader-title">
+        <div class="reader-header">
+          <h2 id="reader-title">Extracted text</h2>
+          <p>Click any word to jump there and start reading.</p>
+        </div>
+        <article id="text-output" class="text-output" aria-live="polite">
+          <p class="placeholder">Your extracted text will appear here after you upload a supported file.</p>
+        </article>
+      </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
